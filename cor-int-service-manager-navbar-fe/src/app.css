@@ -1,0 +1,19 @@
+.drawer {
+   width: 240px;
+   flex-shrink: 0;
+}
+.drawerPaper {
+  width: 240px;
+  z-index: 1;
+}
+.drawerContainer {
+  overflow: 'auto';
+}
+.drawerMin {
+  max-width: 60;
+  flex-shrink: 0;
+}
+.drawerPaperMin {
+  max-width: 60;
+  z-index: 1;
+}
