@@ -1,0 +1,28 @@
+<div class="container-sm login">
+   <h2 class="jumbotron ">Portal HDI Developer</h2>
+   <form class="login-form" [formGroup]="loginForm" (ngSubmit)="sign()">
+     <div class="row">
+       <mat-form-field class="col-sm-12">
+         <mat-label>User</mat-label>
+         <input matInput placeholder="User" formControlName="user" required>
+         <mat-error *ngIf="loginForm.controls.user.errors">
+           <span *ngIf="loginForm.controls.user.errors.required">User is required</span>
+         </mat-error>
+       </mat-form-field>
+     </div>
+     <div class="row">
+       <mat-form-field class="col-sm-12">
+         <mat-label>Password</mat-label>
+         <input type="password" matInput formControlName="password" placeholder="Password" required>
+         <mat-error *ngIf="loginForm.controls.password.errors">
+           <span *ngIf="loginForm.controls.password.errors.required">Password is required</span>
+         </mat-error>
+       </mat-form-field>
+     </div>
+     <div class="row">
+       <div class="col-sm-12" style="text-align:right">
+         <button mat-raised-button color="primary">Sign</button>
+       </div>
+     </div>
+   </form>
+ </div>

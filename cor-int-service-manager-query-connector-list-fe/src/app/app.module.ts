@@ -18,13 +18,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from "@angular/material/dialog";
 
-import { CodemirrorModule } from "@ctrl/ngx-codemirror";
-
-import { HomeComponent } from './home/home.component';
-import { CreateComponent } from './view/create/create.component';
 import { ListComponent } from './list/list.component';
-import { DetailComponent } from './view/detail/detail.component';
-import { EditComponent } from './view/edit/edit.component';
 import { GoHomeComponent } from './go-home/go-home.component';
 import { FiltersDialogComponent } from './filters-dialog/filters-dialog.component';
 import { FilterQueryConnectorPipe } from './pipe/filter-query-connector.pipe';
@@ -32,11 +26,7 @@ import { FilterQueryConnectorPipe } from './pipe/filter-query-connector.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CreateComponent,
     ListComponent,
-    DetailComponent,
-    EditComponent,
     GoHomeComponent,
     FiltersDialogComponent,
     FilterQueryConnectorPipe,
@@ -49,7 +39,6 @@ import { FilterQueryConnectorPipe } from './pipe/filter-query-connector.pipe';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    CodemirrorModule,
     MatAutocompleteModule,
     MatCardModule,
     MatListModule,

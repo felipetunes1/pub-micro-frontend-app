@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:cor-int-service-manager-query-connector-create-fe": "ng build cor-int-service-manager-query-connector-create-fe --prod --deploy-url http://localhost:4200/",
-    "serve:single-spa:cor-int-service-manager-query-connector-create-fe": "ng s --project cor-int-service-manager-query-connector-create-fe --disable-host-check --port 4209 --deploy-url http://localhost:4209/ --live-reload false"
+    "build:single-spa:cor-int-service-manager-query-connector-create-fe": "ng build cor-int-service-manager-query-connector-create-fe --prod --deploy-url http://localhost:4205/",
+    "serve:single-spa:cor-int-service-manager-query-connector-create-fe": "ng s --project cor-int-service-manager-query-connector-create-fe --disable-host-check --port 4205 --deploy-url http://localhost:4205/ --live-reload false"
   },
   "private": true,
   "dependencies": {

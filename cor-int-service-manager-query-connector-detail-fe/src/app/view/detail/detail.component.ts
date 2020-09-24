@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class DetailComponent implements OnInit {
 
-  title: string = 'Edit';
+  title: string = 'Detail';
   create: boolean = false;
   detail: boolean = true;
   mode: string = 'sql';

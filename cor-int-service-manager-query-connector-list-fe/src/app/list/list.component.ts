@@ -45,12 +45,19 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  redirect(url: string) {
+    history.pushState(null, null, url)
+
+  }
+
   goEdit(id) {
-    this.router.navigate([`/query-connector/edit/${id}`]);
+    this.redirect(`/query-connector/edit/${id}`)
+    // this.router.navigate([`/query-connector/edit/${id}`]);
   }
 
   goDetail(id) {
-    this.router.navigate([`/query-connector/detail/${id}`]);
+    this.redirect(`/query-connector/detail/${id}`)
+    // this.router.navigate([`/query-connector/detail/${id}`]);
   }
 
   getPaginatorData(event) {

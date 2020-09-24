@@ -1,0 +1,10 @@
+<div class="jumbotron">
+   <div class="container">
+      <h1 class="display-4">Session Expiring :(</h1>
+      <p class="lead">Your session will expire in: {{data.time | timerFormat}} !</p>
+      <hr class="my-4">
+      <div style="text-align: right;">
+         <button mat-raised-button color="primary" (click)="renew()">Click here to renew</button>
+      </div>
+   </div>
+</div>

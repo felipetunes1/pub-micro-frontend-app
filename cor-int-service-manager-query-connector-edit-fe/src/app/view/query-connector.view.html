@@ -1,4 +1,4 @@
-<app-go-home [title]="title"></app-go-home>
+<app-go-home [title]="title + ' Query Connector'"></app-go-home>
 <div class="container">
    <form [formGroup]="registerForm" class="form-qc-create" (submit)="submit()">
       <div class="row" *ngIf="!create">
@@ -50,18 +50,17 @@
          <div class="col-sm-12">
             <span>Query</span>
             <ngx-codemirror formControlName="query" [options]="{
-         theme: 'idea',
-         mode: (this.database ? this.database.type : 'sql'),
-         gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers', 'CodeMirror'],
-         readOnly: (!!this.database ? false : 'nocursor'),
-         lineNumbers: true,
-         lineWrapping: true,
-         foldGutter: true,
-         autoCloseBrackets: true,
-         matchBrackets: true,
-         lint: true,
-         readOnly: detail ? 'nocursor' : false
-       }"></ngx-codemirror>
+               theme: 'idea',
+               mode: (this.database ? this.database.type : 'sql'),
+               gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers', 'CodeMirror'],
+               lineNumbers: true,
+               lineWrapping: true,
+               foldGutter: true,
+               autoCloseBrackets: true,
+               matchBrackets: true,
+               lint: true,
+               readOnly: detail || !this.database ? 'nocursor' : false
+            }"></ngx-codemirror>
             <mat-error *ngIf="registerForm.controls.query.touched && registerForm.controls.query.errors">
                <span *ngIf="registerForm.controls.query.errors.required">Query is required</span>
             </mat-error>

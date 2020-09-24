@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-light">
+   <a class="navbar-brand"></a>
+   <div class="form-inline">
+      {{singleSpaProps.getLoggin() ? singleSpaProps.getLoggin().userId : ''}}
+      <button mat-button (click)="openExpire()">open expire</button>
+      <button mat-button (click)="openLogin()" *ngIf="showButton()">open login</button>
+      <button mat-button (click)="signOut()" *ngIf="!showButton()">signout</button>
+   </div>
+</nav>
