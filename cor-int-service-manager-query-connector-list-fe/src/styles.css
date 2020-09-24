@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/material';
+@import '~codemirror/theme/idea';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.CodeMirror {
+   border: 1px solid #eee;
+}
+
+.form-qc-create .full-width {
+   width: 100%
+}
+
+.form-qc-create .align-right {
+   text-align: right;
+}

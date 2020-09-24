@@ -1,0 +1,81 @@
+<div class="container">
+   <div class="row">
+      <div class="col-sm-6">
+         <mat-card>
+            <mat-card-header>
+               <mat-card-title>List All</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+               <p style="text-align: center;">List All Dispatcher Register</p>
+            </mat-card-content>
+            <mat-card-actions>
+               <form style="text-align: end;" (submit)="redirect('/dispatcher/list')">
+                  <button mat-button>GO</button>
+               </form>
+            </mat-card-actions>
+         </mat-card>
+      </div>
+      <div class="col-sm-6">
+         <mat-card>
+            <mat-card-header>
+               <mat-card-title>New Register</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+               <p style="text-align: center;">Create New Dispatcher Register</p>
+            </mat-card-content>
+            <mat-card-actions>
+               <form style="text-align: end;" (submit)="redirect('/dispatcher/new')">
+                  <button mat-button>GO</button>
+               </form>
+            </mat-card-actions>
+         </mat-card>
+      </div>
+   </div>
+   <br />
+   <div class="row">
+      <div class="col-sm-6">
+         <mat-card>
+            <mat-card-header>
+               <mat-card-title>Detail</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+               <p style="text-align: center;">Dispatcher Register Detail</p>
+            </mat-card-content>
+            <mat-card-actions>
+               <form style="text-align: end;" [formGroup]="detailForm" (submit)="detailRedirect('/dispatcher/detail')">
+                  <mat-error *ngIf="detailForm.controls.id.touched && detailForm.controls.id.errors">
+                     <span *ngIf="detailForm.controls.id.errors.required">Template Code is required</span>
+                  </mat-error>
+                  <mat-form-field>
+                     <mat-label>Template Code</mat-label>
+                     <input matInput type="text" formControlName="id" />
+                  </mat-form-field>
+                  <button mat-button>GO</button>
+               </form>
+            </mat-card-actions>
+         </mat-card>
+      </div>
+      <div class="col-sm-6">
+         <mat-card>
+            <mat-card-header>
+               <mat-card-title>Edit</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+               <p style="text-align: center;">Dispatcher Edit</p>
+            </mat-card-content>
+            <mat-card-actions>
+               <form style="text-align: end;" [formGroup]="editForm" (submit)="editRedirect('/dispatcher/edit')">
+                  <mat-error *ngIf="editForm.controls.id.touched && editForm.controls.id.errors">
+                     <span *ngIf="editForm.controls.id.errors.required">Template Code is required</span>
+                  </mat-error>
+                  <mat-form-field>
+                     <mat-label>Template Code</mat-label>
+                     <input matInput type="text" formControlName="id" />
+                  </mat-form-field>
+                  <button mat-button>GO</button>
+               </form>
+            </mat-card-actions>
+         </mat-card>
+      </div>
+   </div>
+</div>
