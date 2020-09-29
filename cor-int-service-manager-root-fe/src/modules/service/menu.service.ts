@@ -104,6 +104,78 @@ const mock = [
       "routeType": 1
    },
    {
+      "app": "cor-int-service-manager-dispatcher-fe",
+      "appId": 13,
+      "version": 1,
+      "route": '/dispatcher',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-dispatcher-list-fe",
+      "appId": 14,
+      "version": 1,
+      "route": '/dispatcher/list',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-dispatcher-create-fe",
+      "appId": 15,
+      "version": 1,
+      "route": '/dispatcher/new',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-dispatcher-detail-fe",
+      "appId": 16,
+      "version": 1,
+      "route": '/dispatcher/detail/[\\w]+',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-dispatcher-edit-fe",
+      "appId": 17,
+      "version": 1,
+      "route": '/dispatcher/edit/[\\w]+',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-generic-orchestrator-edit-fe",
+      "appId": 18,
+      "version": 1,
+      "route": '/generic-orchestrator/edit/[\\w]+($|/(xml|route))',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-generic-orchestrator-create-fe",
+      "appId": 19,
+      "version": 1,
+      "route": '/generic-orchestrator/new($|/(xml|route))',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-generic-orchestrator-detail-fe",
+      "appId": 20,
+      "version": 1,
+      "route": '/generic-orchestrator/detail/[\\w]+($|/(xml|route))',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
       "app": "@hdi-seguros/footer-app",
       "appId": 4,
       "version": 1,

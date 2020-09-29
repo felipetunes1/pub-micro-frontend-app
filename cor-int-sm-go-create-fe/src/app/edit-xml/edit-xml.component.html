@@ -1,0 +1,27 @@
+<app-go-home [title]="'New Generic Orchestrador Edit XML'"></app-go-home>
+<div class="container">
+   <div class="row">
+      <div class="col-sm-12">Route XML</div>
+   </div>
+   <div class="row">
+      <div class="col-sm-12">
+         <ngx-codemirror [(ngModel)]="xmlString" name="routeXml" style="height: 500px;" [options]="{
+            theme: 'idea',
+            mode: 'xml',
+            gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers', 'CodeMirror'],
+            lineNumbers: true,
+            lineWrapping: true,
+            foldGutter: true,
+            autoCloseBrackets: true,
+            matchBrackets: true,
+            lint: true,
+            lines: 100,
+            readOnly: detail ? 'nocursor' : false
+         }"></ngx-codemirror></div>
+   </div>
+   <div class="row" style="margin: 10px 0;">
+      <div class="col-sm-10"></div>
+      <div class="col-sm-1"><button mat-raised-button color="primary" (click)="cancel()">Cancel</button></div>
+      <div class="col-sm-1"><button mat-raised-button color="primary" (click)="confirm()">Confirm</button></div>
+   </div>
+</div>

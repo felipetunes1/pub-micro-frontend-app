@@ -1,0 +1,23 @@
+{
+  "name": "pub-micro-frontend-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run --prefix cor-int-service-manager-footer-fe start\" \"npm run --prefix cor-int-service-manager-header-fe start\" \"npm run --prefix cor-int-service-manager-home-fe start\" \"npm run --prefix cor-int-service-manager-login-fe start\" \"npm run --prefix cor-int-service-manager-navbar-fe start\" \"npm run --prefix cor-int-service-manager-notification-fe start-spa\" \"npm run --prefix cor-int-service-manager-query-connector-create-fe serve:single-spa:cor-int-service-manager-query-connector-create-fe\" \"npm run --prefix cor-int-service-manager-query-connector-detail-fe serve:single-spa:cor-int-service-manager-query-connector-detail-fe\" \"npm run --prefix cor-int-service-manager-query-connector-edit-fe serve:single-spa:cor-int-service-manager-query-connector-edit-fe\" \"npm run --prefix cor-int-service-manager-query-connector-fe serve:single-spa:cor-int-service-manager-query-connector-fe\" \"npm run --prefix cor-int-service-manager-query-connector-list-fe serve:single-spa:cor-int-service-manager-query-connector-list-fe\" \"npm run --prefix cor-int-service-manager-dispatcher-create-fe serve:single-spa:cor-int-service-manager-dispatcher-create-fe\" \"npm run --prefix cor-int-service-manager-dispatcher-detail-fe serve:single-spa:cor-int-service-manager-dispatcher-detail-fe\" \"npm run --prefix cor-int-service-manager-dispatcher-edit-fe serve:single-spa:cor-int-service-manager-dispatcher-edit-fe\" \"npm run --prefix cor-int-service-manager-dispatcher-fe serve:single-spa:cor-int-service-manager-dispatcher-fe\" \"npm run --prefix cor-int-service-manager-dispatcher-list-fe serve:single-spa:cor-int-service-manager-dispatcher-list-fe\" \"npm run --prefix cor-int-sm-go-create-fe serve:single-spa:cor-int-service-manager-generic-orchestrator-create-fe\" \"npm run --prefix cor-int-sm-go-detail-fe serve:single-spa:cor-int-service-manager-generic-orchestrator-detail-fe\" \"npm run --prefix cor-int-sm-go-edit-fe serve:single-spa:cor-int-service-manager-generic-orchestrator-edit-fe\" \"npm run --prefix cor-int-service-manager-root-fe start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipetunes1/pub-micro-frontend-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipetunes1/pub-micro-frontend-app/issues"
+  },
+  "homepage": "https://github.com/felipetunes1/pub-micro-frontend-app#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}

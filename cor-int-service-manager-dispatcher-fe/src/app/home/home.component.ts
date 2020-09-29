@@ -23,12 +23,14 @@ export class HomeComponent implements OnInit {
   }
 
   redirect(route: string = "/dispatcher/") {
-    this.router.navigate([route]);
+    history.pushState(null, null, route)
+    // this.router.navigate([route]);
   }
 
   detailRedirect(route: string = "/dispatcher/") {
     if (this.detailForm.controls.id.valid) {
       this.redirect(`${route}/${this.detailForm.controls.id.value}`)
+      // this.redirect(`${route}/${this.detailForm.controls.id.value}`)
     }
 
   }
@@ -36,6 +38,7 @@ export class HomeComponent implements OnInit {
   editRedirect(route: string = "/dispatcher/") {
     if (this.editForm.controls.id.valid) {
       this.redirect(`${route}/${this.editForm.controls.id.value}`)
+      // this.redirect(`${route}/${this.editForm.controls.id.value}`)
     }
 
 

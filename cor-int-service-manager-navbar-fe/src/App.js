@@ -52,6 +52,58 @@ const menuResponse = [
             "href": "/query-connector/list",
           }
         ]
+      },
+      {
+        "id": 6,
+        "title": "Dispatcher",
+        "icon": "<InboxIcon />",
+        "isopen": false,
+        "submenu": [
+          {
+            "id": 7,
+            "title": "Home",
+            "icon": "<InboxIcon />",
+            "href": "/dispatcher",
+          },
+          {
+            "id": 8,
+            "title": "New",
+            "icon": "<InboxIcon />",
+            "href": "/dispatcher/new",
+          },
+          {
+            "id": 9,
+            "title": "List",
+            "icon": "<InboxIcon />",
+            "href": "/dispatcher/list",
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Orchestrator",
+        "icon": "<InboxIcon />",
+        "isopen": false,
+        "submenu": [
+          {
+            "id": 11,
+            "title": "Home",
+            "icon": "<InboxIcon />",
+            "href": "/generic-orchestrator",
+          },
+          {
+            "id": 12,
+            "title": "New",
+            "icon": "<InboxIcon />",
+            "href": "/generic-orchestrator/new",
+          },
+          {
+            "id": 13,
+            "title": "List",
+            "icon": "<InboxIcon />",
+            "href": "/generic-orchestrator/list",
+          }
+        ]
       }
     ]
   }

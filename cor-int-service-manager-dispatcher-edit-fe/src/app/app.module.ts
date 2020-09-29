@@ -21,26 +21,14 @@ import { CodemirrorModule } from "@ctrl/ngx-codemirror";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
-import { DetailComponent } from './detail/detail.component';
-import { ListComponent } from './list/list.component';
 import { GoHomeComponent } from './go-home/go-home.component';
-import { DialogFilterComponent } from './dialog-filter/dialog-filter.component';
-import { FilterDispatcherPipe } from './pipe/filter-dispatcher.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CreateComponent,
     EditComponent,
-    DetailComponent,
-    ListComponent,
     GoHomeComponent,
-    DialogFilterComponent,
-    FilterDispatcherPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,142 @@
+<app-go-home [title]="'Generic Orquestrator Edit'"></app-go-home>
+<div class="container">
+  <div class="row"  style="font-size: 1.15em;">
+    <div class="col-sm-12">
+      <mat-form-field style="width:100%">
+        <mat-label>Template Name</mat-label>
+        <input matInput name="templateName" [(ngModel)]="routeId" [disabled]="details || !create" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div [class.col-sm-10]="!details" [class.col-sm-11]="details">
+      <mat-form-field style="width:100%">
+        <mat-label>Route</mat-label>
+        <input matInput name="filter" [(ngModel)]="filter" />
+        <button mat-button matSuffix mat-icon-button (click)="filter = ''" *ngIf="!!filter">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-1" *ngIf="details">
+      <button mat-raised-button color="primary">View XML</button>
+    </div>
+    <div class="col-sm-1" *ngIf="!details">
+      <button mat-raised-button color="primary" (click)="showXml()">Edit XML</button>
+    </div>
+    <div class="col-sm-1" *ngIf="!details">
+      <button mat-raised-button color="primary">Save</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" style="margin: 15px 0px"
+      *ngFor="let route of routeEditService.editableRoutes | routeFilter : filter">
+      <mat-card class="routeGeneric"
+        [class.routeGenericRemove]="route.remove"
+        [class.routeGenericEdit]="route.edit"
+        [class.routeGenericNew]="route.newRoute"
+        matRipple
+        [matRippleCentered]="'center'"
+        matTooltip="Edit Route, Hold for 2 sec to remove"
+        [matTooltipPosition]="'above'"
+        (click)="letsGo(route)"
+        (mousedown)="startRemove(route)"
+        (mouseup)="stopRemove()"
+        (mouseleave)="stopRemove()">
+        <mat-card-title style="overflow: hidden;">{{route.from._uri}}</mat-card-title>
+        <mat-card-subtitle>
+          <span *ngIf="route.edit">edited</span>
+          <span *ngIf="route.newRoute">new</span>
+          <span *ngIf="route.remove">removed</span>
+          <span *ngIf="!(route.remove || route.newRoute || route.edit)">route</span>
+        </mat-card-subtitle>
+        <mat-divider>a</mat-divider>
+        <mat-card-content style="overflow: auto; max-height:200px;min-height:200px;">
+          <div *ngFor="let field of route | keyvalue" style="margin: 20px 0px;">
+            <span [ngSwitch]="field.key">
+              <span *ngSwitchCase="'xmlString'">
+              </span>
+              <span *ngSwitchCase="'log'">
+                <p>Logs:</p>
+                <span *ngIf="field.value.length">
+                  <p *ngFor="let log of field.value">{{log | json}}</p>
+                </span>
+                <span *ngIf="!field.value.length">
+                  <p>{{field.value |json}}</p>
+                </span>
+              </span>
+              <span *ngSwitchCase="'setHeader'">
+                <p>setHeader:</p>
+                <span *ngIf="field.value.length">
+                  <p *ngFor="let header of field.value">
+                    {{header | json}}
+                  </p>
+                </span>
+                <span *ngIf="!field.value.length">
+                  <p>{{field.value |json}}</p>
+                </span>
+              </span>
+              <span *ngSwitchCase="'setProperty'">
+                <p>setProperty:</p>
+                <span *ngIf="field.value.length">
+                  <p *ngFor="let property of field.value">
+                    {{property | json}}
+                  </p>
+                </span>
+                <span *ngIf="!field.value.length">
+                  <p>{{field.value |json}}</p>
+                </span>
+              </span>
+              <p *ngSwitchDefault>
+                {{field.key}} : {{field.value | json}}
+              </p>
+            </span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div style="top: -15px; position: absolute; right: -5px;" *ngIf="!details">
+        <button mat-mini-fab
+          color="warn"
+          (click)="remove(route)"
+          *ngIf="!route.remove && !route.edit"
+          matTooltip="Remove Route"
+          [matTooltipPosition]="'after'">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button mat-mini-fab
+          color="warn"
+          (click)="resetStatus(route)"
+          *ngIf="route.edit || route.remove"
+          matTooltip="Restore Default"
+          [matTooltipPosition]="'after'">
+          <mat-icon>settings_backup_restore</mat-icon>
+        </button>
+      </div>
+      <div style="top: 35px; position: absolute; right: -5px;" *ngIf="!details">
+        <button mat-mini-fab
+          color="primary"
+          (click)="letsGo(route)"
+          *ngIf="!route.remove"
+          matTooltip="Edit Route"
+          [matTooltipPosition]="'after'">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+
+    </div>
+    <div class="col-sm-4" style="margin: 15px 0px" *ngIf="!details">
+      <mat-card>
+        <mat-card-content style="overflow: auto; max-height:265px;min-height:265px;">
+          <button style="max-height:265px;min-height:265px; width: 100%;"
+            mat-button
+            matSuffix
+            (click)="newRoute()"
+            matTooltip="New Route"
+            [matTooltipPosition]="'above'">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

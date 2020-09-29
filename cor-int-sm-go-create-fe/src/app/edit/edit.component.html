@@ -1,0 +1,33 @@
+<!-- {{routeEditService.route | json}} -->
+<app-go-home [title]="'Generic Orquestrator New'"></app-go-home>
+<div class="container">
+   <div class="row">
+      <div class="col-sm-12">Route {{route.from ? route.from._uri : 'New'}}</div>
+   </div>
+   <div class="row">
+      <div class="col-sm-12">
+         <ngx-codemirror [(ngModel)]="route.xmlString" name="routeXml" style="height: 500px;" [options]="{
+            theme: 'idea',
+            mode: 'xml',
+            gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers', 'CodeMirror'],
+            lineNumbers: true,
+            lineWrapping: true,
+            foldGutter: true,
+            autoCloseBrackets: true,
+            matchBrackets: true,
+            lint: true,
+            lines: 100,
+            readOnly: detail ? 'nocursor' : false
+         }"></ngx-codemirror>
+      </div>
+   </div>
+   <div class="row" style="text-align: right; margin: 15px 0;" *ngIf="!detail">
+      <div class="col-sm-10"></div>
+      <div class="col-sm-1">
+         <button *ngIf="!route.newRoute && route.from" mat-raised-button color="primary">Reset</button>
+      </div>
+      <div class="col-sm-1">
+         <button mat-raised-button color="primary" (click)="submit()">Update</button>
+      </div>
+   </div>
+</div>

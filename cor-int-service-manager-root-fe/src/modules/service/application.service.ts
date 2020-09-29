@@ -92,9 +92,73 @@ const mock = [
    },
    {
       "version": 1,
+      "appId": 13,
+      "app": "cor-int-service-manager-dispatcher-fe",
+      "endpoint": "//localhost:4206/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 14,
+      "app": "cor-int-service-manager-dispatcher-list-fe",
+      "endpoint": "//localhost:4207/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 15,
+      "app": "cor-int-service-manager-dispatcher-create-fe",
+      "endpoint": "//localhost:4208/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 16,
+      "app": "cor-int-service-manager-dispatcher-detail-fe",
+      "endpoint": "//localhost:4209/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 17,
+      "app": "cor-int-service-manager-dispatcher-edit-fe",
+      "endpoint": "//localhost:4210/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 18,
+      "app": "cor-int-service-manager-generic-orchestrator-edit-fe",
+      "endpoint": "//localhost:4211/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 19,
+      "app": "cor-int-service-manager-generic-orchestrator-create-fe",
+      "endpoint": "//localhost:4212/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 20,
+      "app": "cor-int-service-manager-generic-orchestrator-detail-fe",
+      "endpoint": "//localhost:4213/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
       "appId": 5,
       "app": "hdi-seguros-notification-app",
-      "endpoint": "//localhost:4200/main.js",
+      "endpoint": "//localhost:3999/main.js",
       "elementName": "footer",
       "defaultAttr": 1
    },

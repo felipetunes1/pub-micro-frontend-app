@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/material';
+@import '~codemirror/theme/idea';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.CodeMirror {
+   border: 1px solid #eee;
+}
+
+ngx-codemirror .CodeMirror,
+ngx-codemirror .CodeMirror-scroll {
+   height:500px;
+   max-height:500px;
+}
+
+.routeGenericRemove {
+   background-color: red;
+   color: white;
+}
+
+.routeGenericEdit {
+   background-color: blue;
+   color: white;
+}
+
+.routeGenericNew {
+   background-color: green;
+   color: white;
+   
+}
+
+.routeGeneric {
+   margin: 5px 0px;
+   cursor: pointer;
+}
+
+.routeGeneric ::-webkit-scrollbar-track {
+   background-color: #F4F4F4;
+ }
+ .routeGeneric ::-webkit-scrollbar {
+   width: 6px;
+   height: 6px;
+   background: #F4F4F4;
+ }
+ .routeGeneric ::-webkit-scrollbar-thumb {
+   background: #dad7d7;
+ }
+
+ .routeGeneric .mat-container {
+   scrollbar-color: #dad7d7 #F4F4F4;
+   scrollbar-width: 6px;
+ }
