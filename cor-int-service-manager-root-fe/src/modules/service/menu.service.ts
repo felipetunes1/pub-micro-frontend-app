@@ -176,6 +176,24 @@ const mock = [
       "routeType": 1
    },
    {
+      "app": "cor-int-service-manager-generic-orchestrator-fe",
+      "appId": 21,
+      "version": 1,
+      "route": '/generic-orchestrator',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
+      "app": "cor-int-service-manager-generic-orchestrator-list-fe",
+      "appId": 22,
+      "version": 1,
+      "route": '/generic-orchestrator/list',
+      "elementName": "main",
+      "routeException": [],
+      "routeType": 1
+   },
+   {
       "app": "@hdi-seguros/footer-app",
       "appId": 4,
       "version": 1,

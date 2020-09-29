@@ -1,0 +1,21 @@
+<form>
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12">
+            <mat-form-field class="example-chip-list" style="width: 100%">
+               <mat-label>Template Code</mat-label>
+               <input type="text" matInput [(ngModel)]="data.templateCode" name="codeTmp" />
+               <button mat-button *ngIf="data.templateCode" matSuffix mat-icon-button aria-label="Clear"
+                  (click)="data.templateCode=''">
+                  <mat-icon>close</mat-icon>
+               </button>
+            </mat-form-field>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-12" style="text-align: right;">
+            <button mat-raised-button color="primary" [mat-dialog-close]="data">Confirm</button>
+         </div>
+      </div>
+   </div>
+</form>

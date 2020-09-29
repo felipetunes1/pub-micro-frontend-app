@@ -1,18 +1,18 @@
 <div class="container">
    <div class="row">
       <div class="col-sm-12">
-         <h3>{{data.title}}</h3>
+         <h4>{{data.title}}</h4>
       </div>
    </div>
    <mat-divider style="margin: 10px 0;"></mat-divider>
    <div class="row" *ngIf="!!data.message">
       <div class="col-sm-12">
-         <h4>{{data.message}}</h4>
+         <p>{{data.message}}</p>
       </div>
    </div>
    <div class="row" *ngIf="!!data.info">
       <div class="col-sm-12">
-         <h5>{{data.info}}</h5>
+         <p>{{data.info}}</p>
       </div>
    </div>
    <div class="row" *ngIf="data.type == 'input'">

@@ -156,6 +156,22 @@ const mock = [
    },
    {
       "version": 1,
+      "appId": 21,
+      "app": "cor-int-service-manager-generic-orchestrator-fe",
+      "endpoint": "//localhost:4214/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
+      "appId": 22,
+      "app": "cor-int-service-manager-generic-orchestrator-list-fe",
+      "endpoint": "//localhost:4215/main.js",
+      "elementName": "main",
+      "defaultAttr": 1
+   },
+   {
+      "version": 1,
       "appId": 5,
       "app": "hdi-seguros-notification-app",
       "endpoint": "//localhost:3999/main.js",

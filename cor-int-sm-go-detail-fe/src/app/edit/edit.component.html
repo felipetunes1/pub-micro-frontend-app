@@ -1,7 +1,9 @@
 <!-- {{routeEditService.route | json}} -->
-<app-go-home [title]="'Generic Orquestrator Detail'" [id]="routeId"></app-go-home>
+<app-go-home [title]="'Detail Generic Orquestrator'"></app-go-home>
 <div class="container">
-   <h2>Route: {{route.from ? route.from._uri : 'New'}}</h2>
+   <div class="row">
+      <div class="col-sm-12">Route {{route.from ? route.from._uri : 'New'}}</div>
+   </div>
    <div class="row">
       <div class="col-sm-12">
          <ngx-codemirror [(ngModel)]="route.xmlString" name="routeXml" style="height: 500px;" [options]="{

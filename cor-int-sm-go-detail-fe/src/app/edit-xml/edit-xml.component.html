@@ -19,7 +19,7 @@
             readOnly: detail ? 'nocursor' : false
          }"></ngx-codemirror></div>
    </div>
-   <div class="row" style="margin: 10px 0;">
+   <div class="row" style="margin: 10px 0;" *ngIf="!detail">
       <div class="col-sm-10"></div>
       <div class="col-sm-1"><button mat-raised-button color="primary" (click)="cancel()">Cancel</button></div>
       <div class="col-sm-1"><button mat-raised-button color="primary" (click)="confirm()">Confirm</button></div>

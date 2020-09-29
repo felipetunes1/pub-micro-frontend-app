@@ -17,7 +17,7 @@ export class RouteEditService {
   }
 
   getRoute(id: string) {
-    return this.http.get<any>('assets/route.xml').subscribe(response => {
+    return this.http.get<any>('http://localhost:4211/assets/route.xml').subscribe(response => {
       this.routeFull = response.a;
       this.transformXml();
       this.routes = this.editableRoutes.map(item => Object.assign({}, item));
