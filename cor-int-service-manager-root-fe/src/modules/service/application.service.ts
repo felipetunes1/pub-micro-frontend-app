@@ -14,7 +14,7 @@ const mock = [
       "version": 1,
       "appId": 4,
       "app": "@hdi-seguros/footer-app",
-      "endpoint": "//localhost:9306/hdi-seguros-footer-app.js",
+      "endpoint": "https://storage.googleapis.com/cor-int-service-manager-app/public/applications/cor-int-service-manager-footer-fe/v1/dist/hdi-seguros-footer-app.js",
       "elementName": "footer",
       "defaultAttr": 1
    },
@@ -39,7 +39,7 @@ const mock = [
       "appId": 7,
       "app": "hdi-seguros-login-fe",
       "endpoint": "//localhost:4900/main.js",
-      "elementName": "nav",
+      "elementName": "nav" ,
       "defaultAttr": 1
    },
    {
