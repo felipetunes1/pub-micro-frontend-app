@@ -86,6 +86,11 @@ Tutoriais:
     b. Outra possibilidade seria criar um regex para atender todas as rotas, como foi feito na edição para o orquestrador generico no qual temos 3 rotas na mesma aplicação
   2. Para facilitar a subida de todos as aplicações pode ser usado o node_module concurrently executando o seguinte comando "concurrently --kill-others \"npm run --prefix [path-to-folder] [commando-to-start]\"" onde pode ser colocado n "npm run"
 
+# Diagrama de Menu
+
+  1. Sugestão de base de dados https://drive.google.com/file/d/1YqBdWsL_YdTgEYqOPvIfWNzYUVhxRhtU/view?usp=sharing
+  2. Sugestão de YAML bff get applications http://hdixbbs1:7990/projects/BHSM/repos/cor-int-service-manager-root-fe/raw/openapi-applications.yaml?at=refs%2Fheads%2Ffeature%2Finitial
+  3. Sugestão de YAML bff para login http://hdixbbs1:7990/projects/BHSM/repos/cor-int-service-manager-root-fe/raw/openapi-login.yaml?at=refs%2Fheads%2Ffeature%2Finitial
 
 # Como testar
 

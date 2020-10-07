@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:hdi-seguros-login-fe": "ng build hdi-seguros-login-fe --prod --deploy-url http://localhost:4200/",
+    "build:single-spa:hdi-seguros-login-fe": "ng build hdi-seguros-login-fe --prod",
     "start": "ng s --project hdi-seguros-login-fe --disable-host-check --port 4900 --deploy-url http://localhost:4900/ --live-reload false"
   },
   "private": true,

@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:cor-int-service-manager-generic-orchestrator-fe": "ng build cor-int-service-manager-generic-orchestrator-fe --prod --deploy-url http://localhost:4214/",
+    "build:single-spa:cor-int-service-manager-generic-orchestrator-fe": "ng build cor-int-service-manager-generic-orchestrator-fe --prod",
     "serve:single-spa:cor-int-service-manager-generic-orchestrator-fe": "ng s --project cor-int-service-manager-generic-orchestrator-fe --disable-host-check --port 4214 --deploy-url http://localhost:4214/ --live-reload false"
   },
   "private": true,

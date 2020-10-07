@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:cor-int-service-manager-query-connector-fe": "ng build cor-int-service-manager-query-connector-fe --prod --deploy-url http://localhost:4201/",
+    "build:single-spa:cor-int-service-manager-query-connector-fe": "ng build cor-int-service-manager-query-connector-fe --prod",
     "serve:single-spa:cor-int-service-manager-query-connector-fe": "ng s --project cor-int-service-manager-query-connector-fe --disable-host-check --port 4201 --deploy-url http://localhost:4201/ --live-reload false"
   },
   "private": true,

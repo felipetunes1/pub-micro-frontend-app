@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:cor-int-service-manager-dispatcher-list-fe": "ng build cor-int-service-manager-dispatcher-list-fe --prod --deploy-url http://localhost:4207/",
+    "build:single-spa:cor-int-service-manager-dispatcher-list-fe": "ng build cor-int-service-manager-dispatcher-list-fe --prod",
     "serve:single-spa:cor-int-service-manager-dispatcher-list-fe": "ng s --project cor-int-service-manager-dispatcher-list-fe --disable-host-check --port 4207 --deploy-url http://localhost:4207/ --live-reload false"
   },
   "private": true,

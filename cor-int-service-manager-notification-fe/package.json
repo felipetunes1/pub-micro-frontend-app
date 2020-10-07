@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:hdi-seguros-notification-app": "ng build hdi-seguros-notification-app --prod --deploy-url http://localhost:3999/",
+    "build:single-spa:hdi-seguros-notification-app": "ng build hdi-seguros-notification-app --prod",
     "start-spa": "ng s --project hdi-seguros-notification-app --disable-host-check --port 3999 --deploy-url http://localhost:3999/ --live-reload false"
   },
   "private": true,

@@ -1,0 +1,239 @@
+swagger: '2.0'
+info:
+  description: Login Portal BFF
+  version: 1.0.0
+  title: Login Portal BFF
+host: api.mkp-cr-offers-be.endpoints.mkp-cross-clusters-dev.cloud.goog
+
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: key
+    in: query
+
+security:
+  - api_key: []
+
+basePath: /corporate/system-manager/v1
+tags:
+  - name: Authenticate
+    description: Corporate System Manager Authentication
+paths:
+  /authenticate:
+    post:
+      tags:
+        - Authenticate
+      summary: Authenticate User
+      description: Authenticate User
+      operationId: send
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: X-Application-Id
+          in: header
+          description: Application ID
+          required: true
+          type: string
+        - name: X-Company-Id
+          in: header
+          description: Company ID
+          required: true
+          type: string
+        - name: X-User-Id
+          in: header
+          description: User ID
+          required: true
+          type: string
+        - in: body
+          name: request
+          description: Request Entity
+          required: true
+          schema:
+            $ref: '#/definitions/Request'
+      responses:
+        '200':
+          description: Created
+          schema:
+            $ref: '#/definitions/Response'
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/Response'
+        '204':
+          description: Scheduled to Create
+          schema:
+            $ref: '#/definitions/Response'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '404':
+          description: Data not found
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '405':
+          description: Data input not supplied or invalid
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '406':
+          description: Exception
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+      deprecated: false
+definitions:
+
+  # Start Request Object
+  Request:
+    type: object
+    properties:
+      clientId:
+        type: string
+      secretId:
+        type: string
+    description: Authenticate Entity
+  # End Request Object
+
+  # Start Response Objects
+  Response:
+    type: object
+    properties:
+      token:
+        type: string
+      tokenType:
+        type: string
+      expiresIn:
+        type: number
+      refreshToken:
+        type: string
+      scope:
+        $ref: '#/definitions/Scope'
+  
+  Scope:
+    type: object
+    properties:
+      system:
+        type: array
+        items:
+          $ref: '#/definitions/System'
+  
+  System:
+    type: object
+    properties:
+      id:
+        type: number
+      description:
+        type: string
+      profile:
+        $ref: '#/definitions/Profile'
+  
+  Profile:
+    type: object
+    properties:
+      menu:
+        type: array
+        items:
+          $ref: '#/definitions/Menu'
+      applications:
+        type: array
+        items:
+          $ref: '#/definitions/Application'
+
+
+  Application:
+    type: object
+    properties:
+      id:
+        type: number
+      name:
+        type: string
+      route:
+        $ref: '#/definitions/Route'
+      responsability:
+        type: array
+        items:
+          type: string 
+          enum:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+  
+  Route:
+    type: object
+    properties:
+      type:
+        $ref: '#/definitions/Type'
+      path:
+        type: string
+  
+  Type:
+    type: object
+    properties:
+      id:
+        type: number
+      description:
+        type: string
+  
+  Menu:
+    type: object
+    properties:
+      id:
+        type: number
+        description: Id do menu
+      description:
+        type: string
+        description: Descrição do menu
+      title:
+        type: string
+        description: Titulo do menu
+      order:
+        type: number
+        description: Posição que o menu deve ser apresentado
+      menuChild:
+        type: array
+        description: Submenus
+        items:
+          type: number
+      path:
+        type: string
+        description: Rota para acesso do menu (no caso de ser um menu parent não precisa ter essa informação)
+  # End Response Objects
+
+  ApiErrorResponse:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      description:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/Error'
+    title: ApiErrorResponse
+    description: ApiErrorResponse Entity
+
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      nativeMessage:
+        type: string
+      trackid:
+        type: string
+    title: Error
+    description: Error Entity

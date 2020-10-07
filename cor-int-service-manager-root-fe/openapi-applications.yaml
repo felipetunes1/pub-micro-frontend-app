@@ -1,0 +1,160 @@
+swagger: '2.0'
+info:
+  description: Login Portal BFF
+  version: 1.0.0
+  title: Login Portal BFF
+host: api.mkp-cr-offers-be.endpoints.mkp-cross-clusters-dev.cloud.goog
+
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: key
+    in: query
+
+security:
+  - api_key: []
+
+basePath: /corporate/system-manager/v1
+tags:
+  - name: Authenticate
+    description: Corporate System Manager Authentication
+paths:
+  /applications:
+    get:
+      tags:
+        - Applications
+      summary: Applications
+      description: Applications
+      operationId: send
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: X-Application-Id
+          in: header
+          description: Application ID
+          required: true
+          type: string
+        - name: X-Company-Id
+          in: header
+          description: Company ID
+          required: true
+          type: string
+        - name: X-User-Id
+          in: header
+          description: User ID
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Created
+          schema:
+            $ref: '#/definitions/Response'
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/Response'
+        '204':
+          description: Scheduled to Create
+          schema:
+            $ref: '#/definitions/Response'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '404':
+          description: Data not found
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '405':
+          description: Data input not supplied or invalid
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+        '406':
+          description: Exception
+          schema:
+            $ref: '#/definitions/ApiErrorResponse'
+      deprecated: false
+definitions:
+
+  # Start Response Objects
+  Response:
+    type: object
+    properties:
+      scope:
+        $ref: '#/definitions/Scope'
+  
+  Scope:
+    type: object
+    properties:
+      system:
+        type: array
+        items:
+          $ref: '#/definitions/System'
+  
+  System:
+    type: object
+    properties:
+      id:
+        type: number
+      description:
+        type: string
+      applications:
+        type: array
+        items:
+          $ref: '#/definitions/Application'
+  
+  Application:
+    type: object
+    properties:
+      id:
+        type: number
+      name:
+        type: string
+      url:
+        type: string
+      elementName:
+        type: string
+        enum:
+        - main
+        - header
+        - footer
+        - nav
+  # End Response Objects
+
+  ApiErrorResponse:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      description:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/Error'
+    title: ApiErrorResponse
+    description: ApiErrorResponse Entity
+
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      nativeMessage:
+        type: string
+      trackid:
+        type: string
+    title: Error
+    description: Error Entity
